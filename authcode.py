@@ -3,7 +3,7 @@ from collections import Counter
 import re
 import json
 
-xmldoc = minidom.parse('20110415_VAST11MC2_SecurityLog-rev2.xml')
+xmldoc = minidom.parse()#<- enter the security log file location as this parameter
 
 events = xmldoc.getElementsByTagName('Events')[0]
 
@@ -21,7 +21,7 @@ for b in e:
 		st = fu.attributes['SystemTime']
 		stv = st.value
 
-	if i == '4624':
+	if i == '4624': #<- enter the Event ID you wish to find
 		l.append(stv)
 		
 
